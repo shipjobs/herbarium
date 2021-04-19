@@ -109,7 +109,6 @@ setup(
             "pygments>=2.2",
             "psutil",
             "hydra-core",
-            "panopticapi @ https://github.com/cocodataset/panopticapi/archive/master.zip",
         ],
         "dev": [
             "flake8==3.8.1",
