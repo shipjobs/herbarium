@@ -78,6 +78,7 @@ def collect_env_info():
     except ImportError:
         data.append(("herbarium", "failed to import"))
 
+    """
     try:
         import herbarium._C as _C
     except ImportError as e:
@@ -119,6 +120,7 @@ def collect_env_info():
             data.append(
                 ("herbarium arch flags", detect_compute_compatibility(CUDA_HOME, _C.__file__))
             )
+    """
 
     data.append(get_env_module())
     data.append(("PyTorch", torch_version + " @" + os.path.dirname(torch.__file__)))

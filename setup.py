@@ -120,3 +120,15 @@ setup(
     },
     cmdclass={"build_ext": torch.utils.cpp_extension.BuildExtension},
 )
+
+setup(
+    name='pyherbtools',
+    packages=['pyherbtools'],
+    package_dir = {'pyherbtools': 'pyherbtools'},
+    install_requires=[
+        'setuptools>=18.0',
+        'cython>=0.27.3',
+        'matplotlib>=2.1.0'
+    ],
+    version='2.0',
+)

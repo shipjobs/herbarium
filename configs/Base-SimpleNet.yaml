@@ -1,0 +1,28 @@
+MODEL:
+  META_ARCHITECTURE: "SimpleNet"
+  BACKBONE:
+    NAME: "build_efficientnet_backbone"
+  EFFICIENT:
+    OUT_FEATURES: ["block5","block6"]
+  SIMPLENET:
+    IN_FEATURES: ["block5", "block6"]
+    NUM_CLASSES: ["family", "order", "species"]
+DATASETS:
+  TRAIN: ("herb_2021_val",)
+  TEST: ("herb_2021_val",)
+SOLVER:
+  IMS_PER_BATCH: 64
+  BASE_LR: 0.01  # Note that RetinaNet uses a different default learning rate
+  STEPS: (60000, 80000)
+  MAX_ITER: 90000
+INPUT:
+  MIN_SIZE_TRAIN: (224, 280)
+  MIN_SIZE_TEST: 400
+  CROP:
+    SIZE: [0.6, 0.6]
+VERSION: 2
+DATALOADER:
+  SAMPLER_TRAIN: "RepeatFactorTrainingSampler"
+  REPEAT_THRESHOLD: 1e-7
+  NUM_WORKERS: 10
+  ASPECT_RATIO_GROUPING: True

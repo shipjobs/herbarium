@@ -13,7 +13,7 @@ introduces potential conflicts among other libraries.
 """
 
 
-class Detectron2Handler(PathHandler):
+class HerbariumHandler(PathHandler):
     """
     Resolve anything that's hosted under herbarium's namespace.
     """
@@ -34,4 +34,4 @@ class Detectron2Handler(PathHandler):
 
 PathManager.register_handler(HTTPURLHandler())
 PathManager.register_handler(OneDrivePathHandler())
-PathManager.register_handler(Detectron2Handler())
+PathManager.register_handler(HerbariumHandler())

@@ -49,7 +49,7 @@ def setup_logger(
         name (str): the root module name of this logger
         abbrev_name (str): an abbreviation of the module, to avoid long names in logs.
             Set to "" to not log the root module in logs.
-            By default, will abbreviate "herbarium" to "d2" and leave other
+            By default, will abbreviate "herbarium" to "hb" and leave other
             modules unchanged.
 
     Returns:
@@ -60,7 +60,7 @@ def setup_logger(
     logger.propagate = False
 
     if abbrev_name is None:
-        abbrev_name = "d2" if name == "herbarium" else name
+        abbrev_name = "hb" if name == "herbarium" else name
 
     plain_formatter = logging.Formatter(
         "[%(asctime)s] %(name)s %(levelname)s: %(message)s", datefmt="%m/%d %H:%M:%S"
