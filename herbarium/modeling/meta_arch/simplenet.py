@@ -490,6 +490,8 @@ class SimpleNetHead(nn.Module):
         family_classifier = self.cls_score["family"]
         order_classifier = self.cls_score["order"]       
 
+        
+
         pass
     
     def update_hierarchy_classifier(self):
